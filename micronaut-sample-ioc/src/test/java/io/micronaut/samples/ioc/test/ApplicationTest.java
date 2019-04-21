@@ -1,23 +1,16 @@
-package io.micronaut.samples.ioc;
-
+package io.micronaut.samples.ioc.test;
 
 import io.micronaut.context.ApplicationContext;
 import io.micronaut.context.BeanContext;
 import io.micronaut.samples.ioc.basic.MyBean;
 import io.micronaut.samples.ioc.basic.Vehicle;
 import io.micronaut.samples.ioc.scope.UserService;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import io.micronaut.samples.ioc.scope.UserServicePrototypeScope;
+import lombok.extern.slf4j.Slf4j;
+import org.junit.jupiter.api.Test;
 
-public class Application {
-    private static Logger log = LoggerFactory.getLogger(Application.class);
-
-    public static void main(String[] args) {
-        //applicationContext();
-        //beanContext();
-//        beanContextNamed();
-        beanContextSingleton();
-    }
+@Slf4j
+public class ApplicationTest {
 
     /**
      * 使用最原始的方式获取
@@ -71,4 +64,33 @@ public class Application {
     public static void beanContextSingletonNotInit() {
         BeanContext beanContext = BeanContext.run();
     }
+
+    @Test
+    public void tesBeanSingletonNotInit() {
+        BeanContext beanContext = BeanContext.run();
+    }
+
+    /**
+     * scope-prototype
+     */
+    @Test
+    public void testBeanContextPrototype() {
+        BeanContext beanContext = BeanContext.run();
+
+        Runnable runnable = () -> {
+            UserServicePrototypeScope userService = beanContext.getBean(UserServicePrototypeScope.class);
+            log.info("================{}", userService.hello("Percy"));
+        };
+
+
+        for(int i = 0; i < 5; i++) {
+            new Thread(runnable).start();
+        }
+        try {
+            Thread.sleep(3000L);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
 }

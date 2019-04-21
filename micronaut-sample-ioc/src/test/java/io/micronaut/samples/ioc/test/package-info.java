@@ -1,0 +1,1 @@
+package io.micronaut.samples.ioc.test;

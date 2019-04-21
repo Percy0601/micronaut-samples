@@ -145,7 +145,7 @@
     </dependency>
   </dependencies>
   <properties>
-    <exec.mainClass>io.micronaut.samples.basic.Application</exec.mainClass>
+    <exec.mainClass>io.micronaut.samples.basic.SimpleApplication</exec.mainClass>
   </properties>
 </project>
 
