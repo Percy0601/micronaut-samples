@@ -17,7 +17,7 @@ public class MockBookService implements BookService {
 
     @PostConstruct
     public void init() {
-        Book book = new Book();
+        Book book = new Book("");
         book.setAuthor("fasdf");
         book.setTitle("fasdef");
         book.setId(1);
