@@ -31,6 +31,7 @@
     <modules>
         <module>micronaut-sample-basic</module>
         <module>micronaut-sample-ioc</module>
+        <module>micronaut-sample-native-image</module>
     </modules>
 
     <dependencyManagement>
@@ -41,12 +42,6 @@
                 <version>${micronaut.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
-            </dependency>
-            <dependency>
-                <groupId>io.micronaut.test</groupId>
-                <artifactId>micronaut-test-junit5</artifactId>
-                <version>${micronaut-test-junit5.version}</version>
-                <scope>test</scope>
             </dependency>
             <dependency>
                 <groupId>org.junit.jupiter</groupId>
