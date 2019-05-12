@@ -23,15 +23,17 @@
     <properties>
         <micronaut-test-junit5.version>1.0.2</micronaut-test-junit5.version>
         <junit-jupiter-engine.version>5.4.2</junit-jupiter-engine.version>
-        <micronaut.version>1.1.0</micronaut.version>
+        <micronaut.version>1.1.1</micronaut.version>
         <jdk.version>8</jdk.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <lombok.version>1.18.6</lombok.version>
     </properties>
 
     <modules>
         <module>micronaut-sample-basic</module>
         <module>micronaut-sample-ioc</module>
         <module>micronaut-sample-native-image</module>
+        <module>micronaut-sample-config</module>
     </modules>
 
     <dependencyManagement>
@@ -48,6 +50,13 @@
                 <artifactId>junit-jupiter-engine</artifactId>
                 <version>5.1.0</version>
                 <scope>test</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+                <scope>provided</scope>
             </dependency>
         </dependencies>
     </dependencyManagement>

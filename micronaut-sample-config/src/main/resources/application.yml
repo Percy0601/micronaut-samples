@@ -1,0 +1,11 @@
+micronaut:
+  application:
+    name: micronaut-sample-config
+
+my:
+  engine:
+    cylinders: 8
+
+    my.engine.crank-shaft:
+        rodLength: 3.5
+
