@@ -34,6 +34,7 @@
         <module>micronaut-sample-ioc</module>
         <module>micronaut-sample-native-image</module>
         <module>micronaut-sample-config</module>
+        <module>micronaut-sample-data-jdbc-tomcat</module>
     </modules>
 
     <dependencyManagement>

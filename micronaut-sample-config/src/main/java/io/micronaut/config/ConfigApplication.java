@@ -8,7 +8,6 @@ public class ConfigApplication {
 
     public static void main(String[] args) {
         ApplicationContext context =  Micronaut.run(ConfigApplication.class);
-
         Engine engine = context.getBean(Engine.class);
     }
 }
